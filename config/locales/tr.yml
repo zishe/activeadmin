@@ -24,13 +24,6 @@ tr:
       buttons:
         filter: "Filtrele"
         clear: "Filtreleri Temizle"
-      predicates:
-        contains: "içerir"
-        equals: "Eşittir"
-        starts_with: "ile başlar"
-        ends_with: "ile biter"
-        greater_than: "Büyükse"
-        less_than: "Küçükse"
     status_tag:
       "yes": "Evet"
       "no": "Hayır"

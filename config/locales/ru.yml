@@ -24,13 +24,6 @@ ru:
       buttons:
         filter: "Фильтровать"
         clear: "Очистить"
-      predicates:
-        contains: "Содержит"
-        equals: "="
-        starts_with: "Начинается с"
-        ends_with: "Заканчивается"
-        greater_than: "больше"
-        less_than: "меньше"
     status_tag:
       "yes": "Да"
       "no": "Нет"

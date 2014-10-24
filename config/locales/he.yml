@@ -24,13 +24,6 @@ he:
       buttons:
         filter: "סינון"
         clear: "איפוס שדות"
-      predicates:
-        contains: "מכיל"
-        equals: "שווה ל"
-        starts_with: "מתחיל עם"
-        ends_with: "מסתיים ב"
-        greater_than: "גדול מ"
-        less_than: "פחות מ"
     status_tag:
       "yes": "כן"
       "no": "לא"

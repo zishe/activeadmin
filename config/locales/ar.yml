@@ -24,13 +24,6 @@ ar:
       buttons:
         filter: "تصنيف"
         clear: "تفريغ"
-      predicates:
-        contains: "يحتوي"
-        equals: "متساوي"
-        starts_with: "يبدأ ب"
-        ends_with: "ينتهي ب"
-        greater_than: "اكثر من"
-        less_than: "اقل من"
     status_tag:
       "yes": "نعم"
       "no": "لا"

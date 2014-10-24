@@ -24,13 +24,6 @@ ja:
       buttons:
         filter: "絞り込む"
         clear: "条件を削除する"
-      predicates:
-        contains: "含まれています"
-        equals: "等しい"
-        starts_with: "で始まる"
-        ends_with: "で終わる"
-        greater_than: "より大きい"
-        less_than: "より小さい"
     status_tag:
       "yes": "はい"
       "no": "いいえ"

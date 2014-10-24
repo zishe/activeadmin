@@ -24,13 +24,6 @@
       buttons:
         filter: "Filter"
         clear: "Töm dina filters"
-      predicates:
-        contains: "Innehåller"
-        equals: "Lika med"
-        starts_with: "Börjar med"
-        ends_with: "Slutar med"
-        greater_than: "Större än"
-        less_than: "Mindre än"
     status_tag:
       "yes": "Ja"
       "no": "Ingen"

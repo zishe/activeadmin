@@ -24,13 +24,6 @@ ko:
       buttons:
         filter: "필터"
         clear: "필터 초기화"
-      predicates:
-        contains: "포함"
-        equals: "같다"
-        starts_with: "로 시작"
-        ends_with: "로 종료"
-        greater_than: "크다"
-        less_than: "작다"
     status_tag:
       "yes": "예"
       "no": "없음"

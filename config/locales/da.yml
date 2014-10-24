@@ -24,13 +24,6 @@ da:
       buttons:
         filter: "Filtrer"
         clear: "Ryd filtre"
-      predicates:
-        contains: "Indeholder"
-        equals: "lig"
-        starts_with: "Begynder med"
-        ends_with: "Slutter med"
-        greater_than: "større end"
-        less_than: "mindre end"
     status_tag:
       "yes": "Ja"
       "no": "Nej"

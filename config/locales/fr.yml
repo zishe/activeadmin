@@ -24,13 +24,6 @@ fr:
       buttons:
         filter: "Filtrer"
         clear: "Supprimer les filtres"
-      predicates:
-        contains: "Contient"
-        equals: "Egal à"
-        starts_with: "Commence par"
-        ends_with: "Se termine par"
-        greater_than: "Plus grand que"
-        less_than: "Plus petit que"
     status_tag:
       "yes": "Oui"
       "no": "Non"

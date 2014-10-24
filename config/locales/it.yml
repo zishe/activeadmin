@@ -24,13 +24,6 @@ it:
       buttons:
         filter: "Filtra"
         clear: "Rimuovi filtri"
-      predicates:
-        contains: "Contiene"
-        equals: "Uguale a"
-        starts_with: "Inizia con"
-        ends_with: "Finisce con"
-        greater_than: "Maggiore di"
-        less_than: "Minore di"
     status_tag:
       "yes": "Sì"
       "no": "No"

@@ -24,13 +24,6 @@ nl:
       buttons:
         filter: "Filter"
         clear: "Maak Filters Ongedaan"
-      predicates:
-        contains: "Bevat"
-        equals: "Gelijk aan"
-        starts_with: "Begint met"
-        ends_with: "Eindigt op"
-        greater_than: "Groter dan"
-        less_than: "Kleiner dan"
     status_tag:
       "yes": "Ja"
       "no": "Geen"
