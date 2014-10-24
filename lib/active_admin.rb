@@ -2,7 +2,6 @@ require 'active_support/core_ext'
 require 'set'
 
 require 'ransack'
-require 'ransack_ext'
 require 'bourbon'
 require 'kaminari'
 require 'formtastic'
