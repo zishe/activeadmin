@@ -71,19 +71,19 @@ describe ActiveAdmin::Filters::ViewHelper do
     let(:body) { Capybara.string(filter :title) }
 
     it "should generate a select option for starts with" do
-      expect(body).to have_selector("option[value=title_starts_with]", text: "Starts with")
+      expect(body).to have_selector("option[value=title_start]", text: "Starts with")
     end
 
     it "should generate a select option for ends with" do
-      expect(body).to have_selector("option[value=title_ends_with]", text: "Ends with")
+      expect(body).to have_selector("option[value=title_end]", text: "Ends with")
     end
 
     it "should generate a select option for contains" do
-      expect(body).to have_selector("option[value=title_contains]", text: "Contains")
+      expect(body).to have_selector("option[value=title_cont]", text: "Contains")
     end
 
     it "should generate a text field for input" do
-      expect(body).to have_selector("input[name='q[title_contains]']")
+      expect(body).to have_selector("input[name='q[title_cont]']")
     end
 
     it "should have a proper label" do
@@ -99,11 +99,11 @@ describe ActiveAdmin::Filters::ViewHelper do
     it "should select the option which is currently being filtered" do
       scope = Post.search title_starts_with: "foo"
       body = Capybara.string(render_filter scope, title: {})
-      expect(body).to have_selector("option[value=title_starts_with][selected=selected]", text: "Starts with")
+      expect(body).to have_selector("option[value=title_start][selected=selected]", text: "Starts with")
     end
 
     context "with predicate" do
-      %w[eq equals cont contains start starts_with end ends_with].each do |predicate|
+      %w[eq cont start end].each do |predicate|
         describe "'#{predicate}'" do
           let(:body) { Capybara.string(filter :"title_#{predicate}") }
 
@@ -123,7 +123,7 @@ describe ActiveAdmin::Filters::ViewHelper do
     let(:body) { Capybara.string(filter :body) }
 
     it "should generate a search field for a text attribute" do
-      expect(body).to have_selector("input[name='q[body_contains]']")
+      expect(body).to have_selector("input[name='q[body_cont]']")
     end
 
     it "should have a proper label" do
@@ -170,7 +170,7 @@ describe ActiveAdmin::Filters::ViewHelper do
     let(:body) { Capybara.string(filter :id) }
 
     it "should generate a select option for equal to" do
-      expect(body).to have_selector("option[value=id_equals]", text: "Equals")
+      expect(body).to have_selector("option[value=id_eq]", text: "Equals")
     end
     it "should generate a select option for greater than" do
       expect(body).to have_selector("option", text: "Greater than")
@@ -182,9 +182,9 @@ describe ActiveAdmin::Filters::ViewHelper do
       expect(body).to have_selector("input[name='q[id_equals]']")
     end
     it "should select the option which is currently being filtered" do
-      scope = Post.search id_greater_than: 1
+      scope = Post.search id_gt: 1
       body = Capybara.string(render_filter scope, id: {})
-      expect(body).to have_selector("option[value=id_greater_than][selected=selected]", text: "Greater than")
+      expect(body).to have_selector("option[value=id_gt][selected=selected]", text: "Greater than")
     end
   end
 
@@ -237,8 +237,8 @@ describe ActiveAdmin::Filters::ViewHelper do
 
       it "should generate a numeric filter" do
         expect(body).to have_selector("label", text: "Author") # really this should be Author ID :/)
-        expect(body).to have_selector("option[value=author_id_less_than]")
-        expect(body).to have_selector("input#q_author_id[name='q[author_id_equals]']")
+        expect(body).to have_selector("option[value=author_id_lt]")
+        expect(body).to have_selector("input#q_author_id[name='q[author_id_eq]']")
       end
     end
 
@@ -363,23 +363,23 @@ describe ActiveAdmin::Filters::ViewHelper do
       context "with #{verb.inspect} proc" do
         it "#{should} be displayed if true" do
           body = Capybara.string(filter :body, verb => proc{ true })
-          expect(body).send if_true,  have_selector("input[name='q[body_contains]']")
+          expect(body).send if_true,  have_selector("input[name='q[body_cont]']")
         end
         it "#{should} be displayed if false" do
           body = Capybara.string(filter :body, verb => proc{ false })
-          expect(body).send if_false, have_selector("input[name='q[body_contains]']")
+          expect(body).send if_false, have_selector("input[name='q[body_cont]']")
         end
         it "should still be hidden on the second render" do
           filters = {body: { verb => proc{ verb == :unless }}}
           2.times do
             body = Capybara.string(render_filter scope, filters)
-            expect(body).not_to have_selector("input[name='q[body_contains]']")
+            expect(body).not_to have_selector("input[name='q[body_cont]']")
           end
         end
         it "should successfully keep rendering other filters after one is hidden" do
           filters = {body: { verb => proc{ verb == :unless }}, author: {}}
           body    = Capybara.string(render_filter scope, filters)
-          expect(body).not_to have_selector("input[name='q[body_contains]']")
+          expect(body).not_to have_selector("input[name='q[body_cont]']")
           expect(body).to     have_selector("select[name='q[author_id_eq]']")
         end
       end

@@ -4,7 +4,7 @@ module ActiveAdmin
       include FilterBase
       include FilterBase::SearchMethodSelect
 
-      filter :contains, :equals, :starts_with, :ends_with
+      filter :cont, :eq, :start, :end
 
       # If the filter method includes a search condition, build a normal string search field.
       # Else, build a search field with a companion dropdown to choose a search condition from.

@@ -8,7 +8,7 @@
 #     include FilterBase
 #     include FilterBase::SearchMethodSelect
 #
-#     filter :equals, :greater_than, :less_than
+#     filter :eq, :gt, :lt
 #   end
 #
 module ActiveAdmin
