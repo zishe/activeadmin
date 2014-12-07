@@ -71,15 +71,15 @@ describe ActiveAdmin::Filters::ViewHelper do
     let(:body) { Capybara.string(filter :title) }
 
     it "should generate a select option for starts with" do
-      expect(body).to have_selector("option[value=title_start]", text: "Starts with")
+      expect(body).to have_selector("option[value=title_start]", text: "starts with")
     end
 
     it "should generate a select option for ends with" do
-      expect(body).to have_selector("option[value=title_end]", text: "Ends with")
+      expect(body).to have_selector("option[value=title_end]", text: "ends with")
     end
 
     it "should generate a select option for contains" do
-      expect(body).to have_selector("option[value=title_cont]", text: "Contains")
+      expect(body).to have_selector("option[value=title_cont]", text: "contains")
     end
 
     it "should generate a text field for input" do
@@ -97,9 +97,9 @@ describe ActiveAdmin::Filters::ViewHelper do
     end
 
     it "should select the option which is currently being filtered" do
-      scope = Post.search title_starts_with: "foo"
+      scope = Post.search title_start: "foo"
       body = Capybara.string(render_filter scope, title: {})
-      expect(body).to have_selector("option[value=title_start][selected=selected]", text: "Starts with")
+      expect(body).to have_selector("option[value=title_start][selected=selected]", text: "starts with")
     end
 
     context "with predicate" do
@@ -170,21 +170,21 @@ describe ActiveAdmin::Filters::ViewHelper do
     let(:body) { Capybara.string(filter :id) }
 
     it "should generate a select option for equal to" do
-      expect(body).to have_selector("option[value=id_eq]", text: "Equals")
+      expect(body).to have_selector("option[value=id_eq]", text: "equals")
     end
     it "should generate a select option for greater than" do
-      expect(body).to have_selector("option", text: "Greater than")
+      expect(body).to have_selector("option", text: "greater than")
     end
     it "should generate a select option for less than" do
-      expect(body).to have_selector("option", text: "Less than")
+      expect(body).to have_selector("option", text: "less than")
     end
     it "should generate a text field for input" do
-      expect(body).to have_selector("input[name='q[id_equals]']")
+      expect(body).to have_selector("input[name='q[id_eq]']")
     end
     it "should select the option which is currently being filtered" do
       scope = Post.search id_gt: 1
       body = Capybara.string(render_filter scope, id: {})
-      expect(body).to have_selector("option[value=id_gt][selected=selected]", text: "Greater than")
+      expect(body).to have_selector("option[value=id_gt][selected=selected]", text: "greater than")
     end
   end
 
