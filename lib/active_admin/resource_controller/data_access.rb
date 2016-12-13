@@ -230,11 +230,11 @@ module ActiveAdmin
       end
 
       def clean_search_params(params)
-        if params.is_a? Hash
-          params.dup.delete_if{ |key, value| value.blank? }
-        else
+        #if params.is_a? Hash
+          params.to_h.dup.delete_if{ |key, value| value.blank? }
+        #else
           {}
-        end
+        #end
       end
 
       def apply_scoping(chain)
