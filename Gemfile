@@ -5,7 +5,7 @@ gemspec
 require File.expand_path 'spec/support/detect_rails_version', File.dirname(__FILE__)
 
 #rails_version = detect_rails_version
-gem 'rails', '4.1.8'  #, rails_version
+gem 'rails', '>= 5.0.0.1'  #, rails_version
 
 # Optional dependencies
 gem 'cancan'
@@ -14,7 +14,7 @@ gem 'draper'
 gem 'pundit'
 
 # Utility gems used in both development & test environments
-gem 'rake', require: false
+gem 'rake', '10.4.2', require: false
 gem 'parallel_tests'
 
 # Debugging
