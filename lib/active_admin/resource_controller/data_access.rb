@@ -225,7 +225,7 @@ module ActiveAdmin
       # Applies any Ransack search methods to the currently scoped collection.
       # Both `search` and `ransack` are provided, but we use `ransack` to prevent conflicts.
       def apply_filtering(chain)
-        @search = chain.ransack clean_search_params params[:q]
+        @search = chain.ransack clean_search_params(params[:q])
         @search.result
       end
 
@@ -233,7 +233,7 @@ module ActiveAdmin
         #if params.is_a? Hash
           params.to_h.dup.delete_if{ |key, value| value.blank? }
         #else
-          {}
+        #  {}
         #end
       end
 
