@@ -211,9 +211,9 @@ module ActiveAdmin
 
     # Adds before, around and after filters to all controllers.
     # Example usage:
-    #   ActiveAdmin.before_filter :authenticate_admin!
+    #   ActiveAdmin.before_action :authenticate_admin!
     #
-    %w(before_filter skip_before_filter after_filter skip_after_filter around_filter skip_filter).each do |name|
+    %w(before_action skip_before_action after_filter skip_after_filter around_filter skip_filter).each do |name|
       define_method name do |*args, &block|
         controllers_for_filters.each do |controller|
           controller.public_send name, *args, &block

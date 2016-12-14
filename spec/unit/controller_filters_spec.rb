@@ -12,14 +12,14 @@ describe ActiveAdmin::Application do
     ]
   end
 
-  it 'before_filter' do
-    controllers.each{ |c| expect(c).to receive(:before_filter).and_return(true) }
-    application.before_filter :my_filter, only: :show
+  it 'before_action' do
+    controllers.each{ |c| expect(c).to receive(:before_action).and_return(true) }
+    application.before_action :my_filter, only: :show
   end
 
-  it 'skip_before_filter' do
-    controllers.each{ |c| expect(c).to receive(:skip_before_filter).and_return(true) }
-    application.skip_before_filter :my_filter, only: :show
+  it 'skip_before_action' do
+    controllers.each{ |c| expect(c).to receive(:skip_before_action).and_return(true) }
+    application.skip_before_action :my_filter, only: :show
   end
 
   it 'after_filter' do
