@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'inherited_resources', github: 'activeadmin/inherited_resources', branch: 'rails-5.2'
+
 # Optional dependencies
 gem 'cancan'
 gem 'pundit'
